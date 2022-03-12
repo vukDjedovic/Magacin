@@ -13,32 +13,47 @@ public class KucnaHemija {
 	public String getNazivKucneHemije() {
 		return nazivKucneHemije;
 	}
-	public void setNazivKucneHemije(String nazivKucneHemije) {
-		this.nazivKucneHemije = nazivKucneHemije;
+	public void setNazivKucneHemije(String nazivKucneHemije) throws Exception {
+		if(nazivKucneHemije==null || nazivKucneHemije.isEmpty()) {
+			throw new Exception("Naziv ne sme biti null ili prazan string!");
+		}
+		else this.nazivKucneHemije = nazivKucneHemije;
 	}
 	public int getSifraKucneHemije() {
 		return sifraKucneHemije;
 	}
-	public void setSifraKucneHemije(int sifraKucneHemije) {
+	public void setSifraKucneHemije(int sifraKucneHemije) throws Exception {
+		if(sifraKucneHemije<0) {
+			throw new Exception("Sifra mora biti pozitivan ceo broj!");
+		}
 		this.sifraKucneHemije = sifraKucneHemije;
 	}
 	public String getOpisKucneHemije() {
 		return opisKucneHemije;
 	}
-	public void setOpisKucneHemije(String opisKucneHemije) {
-		this.opisKucneHemije = opisKucneHemije;
+	public void setOpisKucneHemije(String opisKucneHemije) throws Exception {
+		if(opisKucneHemije==null || opisKucneHemije.isEmpty()) {
+			throw new Exception("Opis ne sme biti null ili prazan string!");
+		}
+		else this.opisKucneHemije = opisKucneHemije;
 	}
 	public int getKolicinaKucneHemije() {
 		return kolicinaKucneHemije;
 	}
-	public void setKolicinaKucneHemije(int kolicinaKucneHemije) {
+	public void setKolicinaKucneHemije(int kolicinaKucneHemije) throws Exception {
+		if(kolicinaKucneHemije<=0) {
+			throw new Exception("Kolicina mora biti pozitivan broj veci od nule!");
+		}
 		this.kolicinaKucneHemije = kolicinaKucneHemije;
 	}
 	public Date getDatum() {
 		return rokTrajanja;
 	}
-	public void setDatum(Date datum) {
-		this.rokTrajanja = datum;
+	public void setDatum(Date rokTrajanja) throws Exception {
+		if(rokTrajanja == null || rokTrajanja.before(new Date())) {
+			throw new Exception("Rok trajanja ne sme biti null i ne sme biti pre datuma kreiranja artikla");
+		}
+		this.rokTrajanja = rokTrajanja;
 	}
 	@Override
 	public String toString() {

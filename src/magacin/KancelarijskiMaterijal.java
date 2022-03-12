@@ -10,25 +10,37 @@ public class KancelarijskiMaterijal {
 	public String getNazivKancelarijskogMaterijala() {
 		return nazivKancelarijskogMaterijala;
 	}
-	public void setNazivKancelarijskogMaterijala(String nazivKancelarijskogMaterijala) {
-		this.nazivKancelarijskogMaterijala = nazivKancelarijskogMaterijala;
+	public void setNazivKancelarijskogMaterijala(String nazivKancelarijskogMaterijala) throws Exception {
+		if(nazivKancelarijskogMaterijala==null || nazivKancelarijskogMaterijala.isEmpty()) {
+			throw new Exception("Naziv ne sme biti null ili prazan string!");
+		}
+		else this.nazivKancelarijskogMaterijala = nazivKancelarijskogMaterijala;
 	}
 	public int getSifraKancelarijskogMaterijala() {
 		return sifraKancelarijskogMaterijala;
 	}
-	public void setSifraKancelarijskogMaterijala(int sifraKancelarijskogMaterijala) {
+	public void setSifraKancelarijskogMaterijala(int sifraKancelarijskogMaterijala) throws Exception {
+		if(sifraKancelarijskogMaterijala<0) {
+			throw new Exception("Sifra mora biti pozitivan ceo broj!");
+		}
 		this.sifraKancelarijskogMaterijala = sifraKancelarijskogMaterijala;
 	}
 	public String getOpisKancelarijskogMaterijala() {
 		return opisKancelarijskogMaterijala;
 	}
-	public void setOpisKancelarijskogMaterijala(String opisKancelarijskogMaterijala) {
-		this.opisKancelarijskogMaterijala = opisKancelarijskogMaterijala;
+	public void setOpisKancelarijskogMaterijala(String opisKancelarijskogMaterijala) throws Exception {
+		if(opisKancelarijskogMaterijala==null || opisKancelarijskogMaterijala.isEmpty()) {
+			throw new Exception("Opis ne sme biti null ili prazan string!");
+		}
+		else this.opisKancelarijskogMaterijala = opisKancelarijskogMaterijala;
 	}
 	public int getKolicinaKancelarijskogMaterijala() {
 		return kolicinaKancelarijskogMaterijala;
 	}
-	public void setKolicinaKancelarijskogMaterijala(int kolicinaKancelarijskogMaterijala) {
+	public void setKolicinaKancelarijskogMaterijala(int kolicinaKancelarijskogMaterijala) throws Exception {
+		if(kolicinaKancelarijskogMaterijala<=0) {
+			throw new Exception("Kolicina mora biti pozitivan broj veci od nule!");
+		}
 		this.kolicinaKancelarijskogMaterijala = kolicinaKancelarijskogMaterijala;
 	}
 	@Override

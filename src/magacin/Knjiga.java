@@ -10,25 +10,37 @@ public class Knjiga {
 	public String getNazivKnjige() {
 		return nazivKnjige;
 	}
-	public void setNazivKnjige(String nazivKnjige) {
-		this.nazivKnjige = nazivKnjige;
+	public void setNazivKnjige(String nazivKnjige) throws Exception {
+		if(nazivKnjige==null || nazivKnjige.isEmpty()) {
+			throw new Exception("Naziv ne sme biti null ili prazan string!");
+		}
+		else this.nazivKnjige = nazivKnjige;
 	}
 	public int getSifraKnjige() {
 		return sifraKnjige;
 	}
-	public void setSifraKnjige(int sifraKnjige) {
+	public void setSifraKnjige(int sifraKnjige) throws Exception {
+		if(sifraKnjige<0) {
+			throw new Exception("Sifra mora biti pozitivan ceo broj!");
+		}
 		this.sifraKnjige = sifraKnjige;
 	}
 	public String getOpisKnjige() {
 		return opisKnjige;
 	}
-	public void setOpisKnjige(String opisKnjige) {
-		this.opisKnjige = opisKnjige;
+	public void setOpisKnjige(String opisKnjige) throws Exception {
+		if(opisKnjige==null || opisKnjige.isEmpty()) {
+			throw new Exception("Opis ne sme biti null ili prazan string!");
+		}
+		else this.opisKnjige = opisKnjige;
 	}
 	public int getKolicinaKnjiga() {
 		return kolicinaKnjiga;
 	}
-	public void setKolicinaKnjiga(int kolicinaKnjiga) {
+	public void setKolicinaKnjiga(int kolicinaKnjiga) throws Exception {
+		if(kolicinaKnjiga<=0) {
+			throw new Exception("Kolicina mora biti pozitivan broj veci od nule!");
+		}
 		this.kolicinaKnjiga = kolicinaKnjiga;
 	}
 	@Override

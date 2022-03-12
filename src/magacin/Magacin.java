@@ -6,6 +6,7 @@ import magacin.interfejs.MagacinInterfejs;
 
 public class Magacin implements MagacinInterfejs {
 	
+	// Projekat Magacin je u potpunosti zavrsen!
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	private LinkedList<KucnaHemija> kucneHemije = new LinkedList<KucnaHemija>();
 	private LinkedList<KancelarijskiMaterijal> kancelarijskiMaterijali = new LinkedList<KancelarijskiMaterijal>();

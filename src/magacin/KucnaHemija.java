@@ -40,6 +40,32 @@ public class KucnaHemija {
 	public void setDatum(Date datum) {
 		this.rokTrajanja = datum;
 	}
+	@Override
+	public String toString() {
+		return "KucnaHemija [nazivKucneHemije=" + nazivKucneHemije + ", sifraKucneHemije=" + sifraKucneHemije
+				+ ", opisKucneHemije=" + opisKucneHemije + ", kolicinaKucneHemije=" + kolicinaKucneHemije
+				+ ", rokTrajanja=" + rokTrajanja + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + sifraKucneHemije;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		KucnaHemija other = (KucnaHemija) obj;
+		if (sifraKucneHemije != other.sifraKucneHemije)
+			return false;
+		return true;
+	}
 	
 	
 	

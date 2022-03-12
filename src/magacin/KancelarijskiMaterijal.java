@@ -31,6 +31,34 @@ public class KancelarijskiMaterijal {
 	public void setKolicinaKancelarijskogMaterijala(int kolicinaKancelarijskogMaterijala) {
 		this.kolicinaKancelarijskogMaterijala = kolicinaKancelarijskogMaterijala;
 	}
+	@Override
+	public String toString() {
+		return "KancelarijskiMaterijal [nazivKancelarijskogMaterijala=" + nazivKancelarijskogMaterijala
+				+ ", sifraKancelarijskogMaterijala=" + sifraKancelarijskogMaterijala + ", opisKancelarijskogMaterijala="
+				+ opisKancelarijskogMaterijala + ", kolicinaKancelarijskogMaterijala="
+				+ kolicinaKancelarijskogMaterijala + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + sifraKancelarijskogMaterijala;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		KancelarijskiMaterijal other = (KancelarijskiMaterijal) obj;
+		if (sifraKancelarijskogMaterijala != other.sifraKancelarijskogMaterijala)
+			return false;
+		return true;
+	}
+	
 	
 	
 	
